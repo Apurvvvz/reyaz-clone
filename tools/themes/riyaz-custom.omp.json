@@ -1,0 +1,55 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "blocks": [
+      {
+        "alignment": "left",
+        "segments": [
+          {
+            "foreground": "#87FF00",
+            "properties": {
+              "style": "full"
+            },
+            "style": "plain",
+            "template": "{{ .Path }} ",
+            "type": "path"
+          },
+          {
+            "foreground": "#5FD7FF",
+            "properties": {
+              "branch_ahead_icon": "",
+              "branch_behind_icon": "",
+              "branch_gone_icon": "",
+              "branch_icon": "<#E8CC97>\uf418 </>",
+              "branch_identical_icon": "",
+              "cherry_pick_icon": "",
+              "commit_icon": "",
+              "fetch_stash_count": false,
+              "fetch_status": true,
+              "merge_icon": "",
+              "rebase_icon": "",
+              "revert_icon": "",
+              "tag_icon": ""
+            },
+            "style": "plain",
+            "template": "<#E8CC97>on (</>{{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }} \u25cf<#D75F00>{{ .Working.String }}</>{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }}{{ end }}{{ if .Staging.Changed }} \u25cf<#87FF00>{{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0}} \uf692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }}<#E8CC97>) </>",
+            "type": "git"
+          },
+          {
+            "foreground": "#4363f1",
+            "style": "plain",
+            "template": "<#4363f1>[</>\ufd31 <#f34e4e>{{.Context}}</> | <#ffffff>{{if .Namespace}}{{.Namespace}}{{else}}default{{end}}</><#4363f1>]</> ",
+            "type": "kubectl"
+          },
+          {
+            "foreground": "#D75F00",
+            "style": "plain",
+            "template": "<#C591E8>\u276f</><#69FF94>\u276f</> ",
+            "type": "text"
+          }
+        ],
+        "type": "prompt"
+      }
+    ],
+    "version": 2
+  }
+  

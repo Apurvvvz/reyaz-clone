@@ -11,7 +11,7 @@
 # Disable exit on non 0
 set +e
 
-echo "🐙 Setting up your MacBook Terminal"
+echo "🐙 Setting up your MacBook"
 
 ##### Install HomeBrew #####
 echo "✅ Installing HomeBrew"
@@ -58,3 +58,7 @@ brew install --cask rectangle
 
 echo "✅ Installing VLC"
 brew install --cask vlc
+
+
+#### Copying over custom theme
+sudo cp ./tools/themes/riyaz-custom.omp.json /opt/

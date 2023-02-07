@@ -20,8 +20,9 @@ if test ! $(which brew); then
 fi
 
 ##### Update & Upgrade HomeBrew #####
-echo 'eval "$(/usr/local/homebrew/bin/brew shellenv)"' >> $HOME/.zshrc
-source $HOME/.zshrc
+echo eval "$(/opt/homebrew/bin/brew shellenv)" >> $HOME/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 brew update
 brew upgrade
 

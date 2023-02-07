@@ -20,6 +20,8 @@ if test ! $(which brew); then
 fi
 
 ##### Update & Upgrade HomeBrew #####
+echo 'eval "$(/usr/local/homebrew/bin/brew shellenv)"' >> $HOME/.zshrc
+source $HOME/.zshrc
 brew update
 brew upgrade
 
@@ -55,14 +57,14 @@ brew install --cask iterm2
 echo "✅ Installing Microsoft Outlook"
 brew install --cask microsoft-outlook
 
-echo "⭐️ Installing Cisco AnyConnect VPN Client "
-brew install openconnect
-
 echo "⭐️ Installing Rectangle"
 brew install --cask rectangle
 
 echo "✅ Installing VLC"
 brew install --cask vlc
+
+echo "✅ Installing Zoom"
+brew install --cask zoom
 
 echo "Installing XCode's Command Line Tools"
 xcode-select --install

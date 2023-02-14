@@ -1,12 +1,12 @@
 #! /bin/bash
 
-#####################################
+##########################################################################
 # Author: Riyaz Shaik
 # Version: v1.0.0
 # Date: 02-07-2023
 # Description: This script will setup & configure you new MacBook
 # Usage: ./setup-my-mac.sh
-#####################################
+##########################################################################
 
 # Disable exit on non 0
 set +e
@@ -85,6 +85,6 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 #### Copying over custom theme
-sudo cp ./tools/themes/riyaz-custom.omp.json /opt/
+sudo cp ./tools/themes/my-custom.omp.json /opt/
 
 echo "⭐️⭐️⭐️ Macbook setup completed! ⭐️⭐️⭐️"

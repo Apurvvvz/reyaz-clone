@@ -43,8 +43,11 @@ brew install --cask google-chrome
 echo "✅ Installing VSCode"
 brew install --cask visual-studio-code
 
-echo "🐳 Installing Docker Desktop"
-brew install docker
+# echo "🐳 Installing Docker Desktop"
+# brew install docker
+
+echo "🐳 Installing Rancher Desktop"
+brew install --cask rancher
 
 echo "⚡️ Installing GIT"
 brew install git

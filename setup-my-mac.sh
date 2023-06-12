@@ -94,13 +94,10 @@ brew install --cask font-caskaydia-cove-nerd-font
 brew install --cask font-meslo-lg-nerd-font
 
 #### Configuring the shell to use oh-my-posh
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  # echo 'eval "$(oh-my-posh init zsh)"' >> $HOME/.zshrc
-  if ! grep -Fxq 'eval "$(oh-my-posh init zsh)"' "$HOME/.zshrc"; then
-    echo 'eval "$(oh-my-posh init zsh)"' >> "$HOME/.zshrc" &&
-    echo 'eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/amro-custom.omp.json)' >> $HOME/.zshrc
+if ! grep -Fxq 'eval "$(oh-my-posh init zsh)"' "$HOME/.zshrc"; then
+  echo 'eval "$(oh-my-posh init zsh)"' >> "$HOME/.zshrc" &&
+  echo 'eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/amro-custom.omp.json)' >> $HOME/.zshrc
 
-  fi
 fi
 
 source $HOME/.zshrc

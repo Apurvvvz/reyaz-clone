@@ -43,8 +43,8 @@ brew install --cask google-chrome
 echo "✅ Installing VSCode"
 brew install --cask visual-studio-code
 
-# echo "🐳 Installing Docker Desktop"
-# brew install docker
+echo "🐳 Installing Docker Desktop"
+brew install docker
 
 echo "🐳 Installing Rancher Desktop"
 brew install --cask rancher
@@ -74,8 +74,8 @@ echo "Installing XCode's Command Line Tools"
 xcode-select --install
 
 echo "Installing zsh auto-suggestions"
-brew install zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+brew install zsh-autosuggestions || continue
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh || continue
 
 # Show filename extensions by default
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -85,6 +85,21 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 #### Copying over custom theme
-sudo cp ./tools/themes/my-custom.omp.json /opt/
+sudo cp ./tools/themes/my-custom.omp.json ./tools/themes/amro-custom.omp.json $(brew --prefix oh-my-posh)/themes/
+
+#### Installing the Fonts
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code-nerd-font
+brew install --cask font-caskaydia-cove-nerd-font
+brew install --cask font-meslo-lg-nerd-font
+
+#### Configuring the shell to use oh-my-posh
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  echo 'eval "$(oh-my-posh init zsh)"' >> $HOME/.zshrc
+fi
+
+echo 'eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/amro-custom.omp.json)' >> $HOME/.zshrc
+
+source $HOME/.zshrc
 
 echo "⭐️⭐️⭐️ Macbook setup completed! ⭐️⭐️⭐️"
